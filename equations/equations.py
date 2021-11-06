@@ -54,7 +54,6 @@ if __name__ == '__main__':
         b = input_file[1]
         eps1 = input_file[2]
         eps2 = input_file[3].rstrip("\n")
-    print(a, b, eps1, eps2)
     print(f"Уравнение f(x)=0; f(x)=10cos(x)-0.1x^2; корень в отрезке [{a};{b}]")
     print(f"Точности аргумента и функции: {eps1}, {eps2}")
     a, b = distrRoots(a, b, 10)

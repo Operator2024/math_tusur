@@ -57,10 +57,11 @@ def invGauss(_matrix: ndarray):
     for i in range(n):
         X1[i] = 0
         for j in range(n):
-            X1[i] = X1[i] + X[j] * A[i][j]
-        X1[i] = X1[i] - A[i][n]
+            X1[i] += X[j] * A[i][j]
+        X1[i] -= A[i][n]
         if norm < abs(X1[i]):
             norm = X1[i]
+    print(f"Вектор невязки: e={[X1[i][0] for i in range(n)]}")
     print(f"Невязка: {round(norm[0], 20)}")
     return
 

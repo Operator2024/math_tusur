@@ -34,6 +34,7 @@ if __name__ == '__main__':
     # iteration counter C
     C = 0
     n = 6
+    # t - Legendre points, A - Legendre weights
     t: ndarray = polynomial.legendre.leggauss(n)[0]
     A: ndarray = polynomial.legendre.leggauss(n)[1]
     print(f"Функция: f(x)=exp(-x^2)*cos(x), a={-float('inf')},b={float('inf')}")
