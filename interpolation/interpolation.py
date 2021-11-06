@@ -32,16 +32,18 @@ def r(_x: float, _x0: float, _h: float, _a: float, _b: float, _n: int) -> float:
 
 if __name__ == '__main__':
     n = int(input("Введите порядок интерполяции: "))
-    print("Значение полиномов на новой сетке:")
+    print("Значения полинома на новой сетке, погрешность:")
     print("i" + " " * 3 + "Xi" + "\t" * 3 + "L(Xi)" + "\t" * 3 + "f(Xi)" +
           "\t" * 2 + "Погрешность")
     x0 = 0
+    # https://portal.tpu.ru/SHARED/l/LASUKOV/vm/Tab1/g2.pdf
+    # formula lagrange
     xn = pi / 2
     h = (xn - x0) / n
-    for i in range(21):
-        x = i * pi / 40
+    for g in range(21):
+        x = g * pi / 40
         y = f(x)
-        print(f"{i}" + " " * 3 + f"{round(x, 6):.6f}" + "\t" * 1 +
+        print(f"{g}" + " " * 3 + f"{round(x, 6):.6f}" + "\t" * 1 +
               f"{round(fLagrange(x, x0, xn, n), 6):.6f}" + "\t" * 2 +
               f"{round(y, 6):.6f}" + "\t" +
               f"{round(r(x, x0, h, x0, xn, n), 6):.6f}")

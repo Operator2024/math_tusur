@@ -11,7 +11,7 @@ def fGauss(a: float, b: float, n: int) -> float:
     result = 0
     for i in range(n):
         x = ((b + a) + (b - a) * t[i]) / 2
-        result = result + A[i] * f(x)
+        result += + A[i] * f(x)
     return (b - a) / 2 * result
 
 
